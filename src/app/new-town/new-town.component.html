@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-sm-6">
+    <form [formGroup]="cityForm" class="form" (submit)="submit(cityForm.value)">
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" class="form-control" formControlName="name">
+      </div>
+      <div class="form-group">
+        <label for="region">Region:</label>
+        <textarea id="region" class="form-control" formControlName="region"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="state">State:</label>
+        <input type="text" class="form-control" id="state" formControlName="state">
+      </div>
+      <div class="form-group">
+        <label for="city-image">City image:</label>
+        <input type="text" class="form-control" id="city-image" formControlName="cityImage">
+      </div>
+      <div class="form-group">
+        <label for="short-description">Short description:</label>
+        <input type="text" class="form-control" id="short-description" formControlName="shortDescription">
+      </div>
+      <div class="form-group">
+        <label for="long-description">Long description:</label>
+        <input type="text" class="form-control" id="long-description" formControlName="longDescription">
+      </div>
+      <div class="form-group">
+        <label>
+          Featured:
+          <input type="checkbox" formControlName="featured">
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="deals">Deals:</label>
+        <input type="text" class="form-control" id="deals" formControlName="deals">
+      </div>
+      <div class="form-group">
+        <label for="skyline-image">Skyline image:</label>
+        <input type="text" class="form-control" id="skyline-image" formControlName="skylineImage">
+      </div>
+      <div class="form-group">
+        <label for="tag-line">Tag line:</label>
+        <input type="text" class="form-control" id="tag-line" formControlName="tagLine">
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="!cityForm.valid">Create</button>
+    </form>
+  </div>
+</div>

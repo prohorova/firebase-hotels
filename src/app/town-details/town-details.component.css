@@ -1,0 +1,12 @@
+.row {
+  margin-bottom: 10px;
+}
+
+.row img {
+  max-height: 200px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}

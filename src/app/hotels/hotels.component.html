@@ -1,0 +1,14 @@
+<div>
+  <h1>List of hotels</h1>
+  <table class="table table-striped">
+    <tbody>
+    <tr *ngFor="let hotel of hotels | async">
+      <td><p class="hotel-name">{{hotel.name}}</p></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary" routerLink="/hotel">
+    Create new hotel
+  </button>
+</div>

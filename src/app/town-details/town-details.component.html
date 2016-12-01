@@ -1,0 +1,45 @@
+<h1>{{(city | async)?.name}}</h1>
+<div class="row">
+  <div class="col-sm-2">Region:</div>
+  <div class="col-sm-10">{{(city | async)?.region}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2">State:</div>
+  <div class="col-sm-10">{{(city | async)?.state}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2">City image:</div>
+  <div class="col-sm-10"><img [src]="(city | async)?.cityImage"></div>
+</div>
+<div class="row">
+  <div class="col-sm-2">Short description:</div>
+  <div class="col-sm-10">{{(city | async)?.shortDescription}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2">Long description:</div>
+  <div class="col-sm-10">{{(city | async)?.longDescription}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2">Featured:</div>
+  <div class="col-sm-10">{{(city | async)?.featured}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2">Deals:</div>
+  <div class="col-sm-10">{{(city | async)?.deals}}</div>
+</div>
+<div class="row">
+  <div class="col-sm-2">Skyline image:</div>
+  <div class="col-sm-10"><img [src]="(city | async)?.skylineImage"></div>
+</div>
+<div class="row">
+  <div class="col-sm-2">Tag line:</div>
+  <div class="col-sm-10">{{(city | async)?.tagLine}}</div>
+</div>
+
+<h3>Hotels</h3>
+<ul>
+  <li *ngFor="let hotel of hotels | async">
+    {{hotel.name}}
+  </li>
+</ul>
+

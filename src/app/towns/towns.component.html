@@ -1,0 +1,15 @@
+<div>
+  <h1>List of cities</h1>
+  <table class="table table-striped">
+    <tbody>
+    <tr *ngFor="let city of cities | async">
+      <td><p class="city-name">{{city.name}}</p></td>
+      <td><button class="btn btn-primary" (click)="goToDetails(city)">View</button></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button class="btn btn-primary" routerLink="/town">
+    Create new city
+  </button>
+</div>
