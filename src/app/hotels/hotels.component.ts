@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseListObservable, AngularFire } from 'angularfire2';
 import { Router } from '@angular/router';
+import 'rxjs/add/operator/map';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-hotels',
@@ -9,10 +11,15 @@ import { Router } from '@angular/router';
 })
 export class HotelsComponent implements OnInit {
 
-  hotels: FirebaseListObservable<any>;
+  hotels: Observable<any>;
 
   constructor(private af: AngularFire, private router: Router) {
-    this.hotels = this.af.database.list('/hotels');
+    this.hotels = this.af.database.list('/hotels').map(items => {
+      return items.map(item => {
+        item.city = this.af.database.object(`/cities/${item['cityId']}`);
+        return item;
+      })
+    });
   }
 
   ngOnInit() {

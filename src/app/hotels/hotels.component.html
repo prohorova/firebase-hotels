@@ -4,6 +4,7 @@
     <tbody>
     <tr *ngFor="let hotel of hotels | async">
       <td><p class="hotel-name">{{hotel.name}}</p></td>
+      <td>{{(hotel.city | async)?.name}}</td>
     </tr>
     </tbody>
   </table>
